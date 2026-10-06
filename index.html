@@ -55,7 +55,7 @@
 
     /* PAGE 1: HERO & HIGHLIGHTS */
     .page-hero {
-      padding: 30px 20px;
+      padding: 30px 20px 10px;
       text-align: center;
       position: relative;
     }
@@ -226,13 +226,30 @@
       color: #fff;
     }
 
-    /* RUNDOWN STYLING */
-    .rundown-day-title {
-      color: var(--accent-yellow);
-      font-size: 1.8rem;
-      font-weight: 800;
-      margin: 20px 0 10px;
+    /* RUNDOWN TABS & STYLING */
+    .tab-buttons {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .tab-btn {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      background: var(--card-bg);
+      color: var(--text-white);
+      border-radius: 8px;
       font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .tab-btn.active {
+      background: var(--accent-yellow);
+      color: #000;
     }
 
     .rundown-list {
@@ -245,12 +262,12 @@
       display: flex;
       font-size: 0.85rem;
       background: rgba(255,255,255,0.03);
-      padding: 8px 10px;
-      border-radius: 5px;
+      padding: 10px;
+      border-radius: 6px;
     }
 
     .rundown-time {
-      min-width: 100px;
+      min-width: 105px;
       font-weight: 700;
       color: var(--accent-yellow);
     }
@@ -258,12 +275,12 @@
     .rundown-table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 10px;
+      margin-top: 5px;
     }
 
     .rundown-table td {
       border: 1px dashed rgba(255, 255, 255, 0.2);
-      padding: 8px 10px;
+      padding: 10px;
       font-size: 0.85rem;
     }
 
@@ -417,12 +434,17 @@
       </div>
     </div>
 
-    <!-- RUNDOWN SECTION -->
+    <!-- RUNDOWN SECTION WITH TABS -->
     <div style="padding: 0 20px;">
       <div class="section-header">RUNDOWN</div>
 
-      <div class="rundown-day-title">Day 1</div>
-      <div class="rundown-list">
+      <div class="tab-buttons">
+        <button class="tab-btn active" onclick="switchDay(1)">Day 1</button>
+        <button class="tab-btn" onclick="switchDay(2)">Day 2</button>
+      </div>
+
+      <!-- Day 1 Content -->
+      <div id="day1" class="rundown-list">
         <div class="rundown-row"><div class="rundown-time">05.15 - 05.30</div><div>Kumpul & briefing di MBS Ged A</div></div>
         <div class="rundown-row"><div class="rundown-time">05.30 - 07.00</div><div>Berangkat dari MBS menuju parkiran Sentul</div></div>
         <div class="rundown-row"><div class="rundown-time">07.00 - 08.00</div><div>Start menuju curug hordeng (via mobil pickup) + Stretching</div></div>
@@ -439,33 +461,35 @@
         <div class="rundown-row"><div class="rundown-time">20.00 - 00.00</div><div>Chill & Connect</div></div>
       </div>
 
-      <div class="rundown-day-title" style="text-align: right;">Day 2</div>
-      <table class="rundown-table">
-        <tr>
-          <td>Sarapan / Free time</td>
-          <td class="time-col">06.30 - 09.00</td>
-        </tr>
-        <tr>
-          <td>Pembagian hadiah / Doorprize</td>
-          <td class="time-col">09.00 - 10.00</td>
-        </tr>
-        <tr>
-          <td>Prepare pulang</td>
-          <td class="time-col">10.00 - 11.00</td>
-        </tr>
-        <tr>
-          <td>Maksi duyuuu ~ ~</td>
-          <td class="time-col">11.00 - 12.00</td>
-        </tr>
-        <tr>
-          <td>OTW MBS Ged A</td>
-          <td class="time-col">12.00 - 13.30</td>
-        </tr>
-        <tr>
-          <td>Selesaaaii..bye..bye..</td>
-          <td class="time-col">13.30</td>
-        </tr>
-      </table>
+      <!-- Day 2 Content -->
+      <div id="day2" style="display:none;">
+        <table class="rundown-table">
+          <tr>
+            <td>Sarapan / Free time</td>
+            <td class="time-col">06.30 - 09.00</td>
+          </tr>
+          <tr>
+            <td>Pembagian hadiah / Doorprize</td>
+            <td class="time-col">09.00 - 10.00</td>
+          </tr>
+          <tr>
+            <td>Prepare pulang</td>
+            <td class="time-col">10.00 - 11.00</td>
+          </tr>
+          <tr>
+            <td>Maksi duyuuu ~ ~</td>
+            <td class="time-col">11.00 - 12.00</td>
+          </tr>
+          <tr>
+            <td>OTW MBS Ged A</td>
+            <td class="time-col">12.00 - 13.30</td>
+          </tr>
+          <tr>
+            <td>Selesaaaii..bye..bye..</td>
+            <td class="time-col">13.30</td>
+          </tr>
+        </table>
+      </div>
     </div>
 
     <!-- GEAR LIST SECTION -->
@@ -536,6 +560,24 @@
     function copyRekening(norek) {
       navigator.clipboard.writeText(norek);
       alert("Nomor rekening berhasil disalin: " + norek);
+    }
+
+    function switchDay(day) {
+      const day1 = document.getElementById('day1');
+      const day2 = document.getElementById('day2');
+      const btns = document.querySelectorAll('.tab-btn');
+
+      if (day === 1) {
+        day1.style.display = 'flex';
+        day2.style.display = 'none';
+        btns[0].classList.add('active');
+        btns[1].classList.remove('active');
+      } else {
+        day1.style.display = 'none';
+        day2.style.display = 'block';
+        btns[1].classList.add('active');
+        btns[0].classList.remove('active');
+      }
     }
   </script>
 </body>
