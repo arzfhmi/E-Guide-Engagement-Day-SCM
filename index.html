@@ -4,381 +4,538 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SCM Gathering 2026 - Synergy: Leveling Up!</title>
-  <!-- Google Fonts & Font Awesome -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;0,800;0,900;1,700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
   <style>
     :root {
-      --bg-dark: #122831;
-      --card-bg: #1B3844;
-      --accent-yellow: #F1B811;
-      --text-light: #FFFFFF;
-      --text-dim: #D1D5DB;
-      --accent-green: #10B981;
+      --bg-teal: #122d37;
+      --card-bg: #183845;
+      --accent-yellow: #f5b700;
+      --accent-cyan: #00d2d3;
+      --text-white: #ffffff;
+      --text-dim: #b2bec3;
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Poppins', sans-serif;
     }
 
     body {
-      background-color: var(--bg-dark);
-      color: var(--text-light);
-      line-height: 1.6;
-      padding-bottom: 50px;
-    }
-
-    header {
-      text-align: center;
-      padding: 60px 20px 40px;
-      background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(18,40,49,1) 100%);
-    }
-
-    header h2 {
-      color: var(--accent-yellow);
-      letter-spacing: 2px;
-      font-size: 1.2rem;
-      text-transform: uppercase;
-    }
-
-    header h1 {
-      font-size: 2.8rem;
-      font-weight: 800;
-      margin: 10px 0;
-      line-height: 1.1;
-    }
-
-    .event-meta {
+      background-color: var(--bg-teal);
+      color: var(--text-white);
+      font-family: 'Poppins', sans-serif;
+      padding: 20px 10px;
       display: flex;
       justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-      margin-top: 15px;
     }
 
-    .badge {
-      background: rgba(241, 184, 17, 0.2);
-      color: var(--accent-yellow);
-      border: 1px solid var(--accent-yellow);
-      padding: 6px 16px;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      font-weight: 600;
+    .pdf-container {
+      width: 100%;
+      max-width: 600px;
+      background-color: var(--bg-teal);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
 
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 20px;
+    /* Decorative Line Pattern */
+    .hatch-pattern {
+      background: repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.15),
+        rgba(255, 255, 255, 0.15) 2px,
+        transparent 2px,
+        transparent 8px
+      );
+      width: 50px;
+      height: 40px;
     }
 
-    .card {
-      background: var(--card-bg);
-      border-radius: 16px;
-      padding: 25px;
-      margin-bottom: 25px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    /* PAGE 1: HERO & HIGHLIGHTS */
+    .page-hero {
+      padding: 30px 20px;
+      text-align: center;
+      position: relative;
     }
 
-    .card h3 {
-      font-size: 1.4rem;
-      color: var(--accent-yellow);
-      margin-bottom: 15px;
+    .hero-header {
       display: flex;
-      align-items: center;
-      gap: 10px;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 10px;
     }
 
-    /* Registration & Payment */
-    .price-box {
-      background: rgba(255, 255, 255, 0.05);
+    .hero-title-sub {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-align: left;
+    }
+
+    .hero-title-main {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 900;
+      line-height: 1;
+      text-align: left;
+      margin-bottom: 5px;
+    }
+
+    .hero-title-yellow {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--accent-yellow);
+      font-style: italic;
+      text-align: left;
+      margin-bottom: 25px;
+    }
+
+    /* Polaroid Frame Effect */
+    .polaroid-frame {
+      background: #fff;
+      padding: 10px 10px 25px 10px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+      transform: rotate(-2deg);
+      margin: 15px auto;
+      width: 85%;
+      border-radius: 2px;
+    }
+
+    .polaroid-frame img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .event-info-box {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      padding: 15px;
+      margin: 20px 0;
+      border-left: 4px solid var(--accent-yellow);
+      text-align: left;
+    }
+
+    .event-info-box h3 {
+      color: var(--accent-yellow);
+      font-size: 1.1rem;
+      margin-bottom: 5px;
+    }
+
+    /* HIGHLIGHT GRID */
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin: 20px 0;
+      text-align: left;
+    }
+
+    .highlight-card {
+      background: var(--card-bg);
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .highlight-card h4 {
+      color: var(--accent-yellow);
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .highlight-card p {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+    }
+
+    /* CONTRIBUTION BOX */
+    .contribution-box {
+      background: rgba(0, 0, 0, 0.25);
+      border: 2px dashed var(--accent-yellow);
       border-radius: 12px;
       padding: 20px;
+      margin: 25px 0;
       text-align: center;
-      margin-bottom: 20px;
+    }
+
+    .contribution-box h3 {
+      font-size: 1rem;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
     }
 
     .old-price {
       text-decoration: line-through;
-      color: #9CA3AF;
+      color: #e74c3c;
+      font-weight: bold;
       font-size: 1.1rem;
     }
 
-    .new-price {
+    .main-price {
       font-size: 2.2rem;
       font-weight: 800;
       color: var(--accent-yellow);
       margin: 5px 0;
     }
 
-    .subsidy-badge {
-      display: inline-block;
-      background: var(--accent-green);
-      color: white;
-      font-size: 0.85rem;
-      padding: 4px 12px;
+    .subsidy-tag {
+      background: #27ae60;
+      color: #fff;
+      font-size: 0.8rem;
+      padding: 3px 10px;
       border-radius: 12px;
       font-weight: 600;
+      display: inline-block;
+      margin-bottom: 15px;
     }
 
-    .bank-card {
-      border: 1px dashed var(--accent-yellow);
-      border-radius: 12px;
-      padding: 15px;
+    .bank-info {
+      background: var(--card-bg);
+      padding: 12px;
+      border-radius: 8px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(241, 184, 17, 0.05);
     }
 
     .copy-btn {
       background: var(--accent-yellow);
-      color: var(--bg-dark);
+      color: #000;
       border: none;
-      padding: 8px 16px;
-      border-radius: 8px;
+      padding: 6px 12px;
+      border-radius: 5px;
       font-weight: 700;
       cursor: pointer;
-      transition: 0.2s;
+      font-size: 0.8rem;
     }
 
-    .copy-btn:hover {
-      opacity: 0.9;
+    /* SECTION TITLE */
+    .section-header {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 900;
+      text-align: center;
+      letter-spacing: 2px;
+      margin: 30px 0 15px;
+      color: #fff;
     }
 
-    /* Rundown Tabs */
-    .tab-buttons {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 20px;
+    /* RUNDOWN STYLING */
+    .rundown-day-title {
+      color: var(--accent-yellow);
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin: 20px 0 10px;
+      font-family: 'Montserrat', sans-serif;
     }
 
-    .tab-btn {
-      flex: 1;
-      padding: 10px;
-      border: none;
-      background: rgba(255,255,255,0.1);
-      color: var(--text-light);
-      border-radius: 8px;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    .tab-btn.active {
-      background: var(--accent-yellow);
-      color: var(--bg-dark);
-    }
-
-    .timeline {
+    .rundown-list {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 8px;
     }
 
-    .timeline-item {
+    .rundown-row {
       display: flex;
-      align-items: flex-start;
-      gap: 15px;
-      padding: 10px;
+      font-size: 0.85rem;
       background: rgba(255,255,255,0.03);
-      border-radius: 8px;
+      padding: 8px 10px;
+      border-radius: 5px;
     }
 
-    .time {
+    .rundown-time {
+      min-width: 100px;
       font-weight: 700;
       color: var(--accent-yellow);
-      min-width: 95px;
-      font-size: 0.95rem;
     }
 
-    /* Gear Grid */
-    .gear-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-      gap: 10px;
+    .rundown-table {
+      width: 100%;
+      border-collapse: collapse;
       margin-top: 10px;
     }
 
-    .gear-item {
-      background: rgba(255,255,255,0.05);
-      padding: 10px;
-      border-radius: 8px;
+    .rundown-table td {
+      border: 1px dashed rgba(255, 255, 255, 0.2);
+      padding: 8px 10px;
       font-size: 0.85rem;
+    }
+
+    .rundown-table td.time-col {
+      text-align: right;
+      color: var(--accent-yellow);
+      font-weight: bold;
+      width: 35%;
+    }
+
+    /* GEAR GRID */
+    .gear-section-title {
+      color: var(--accent-yellow);
+      font-size: 0.95rem;
+      font-weight: bold;
+      margin: 15px 0 10px;
+    }
+
+    .gear-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .gear-item {
+      background: var(--card-bg);
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.8rem;
       display: flex;
       align-items: center;
       gap: 8px;
     }
 
-    /* T&C List */
+    .gear-item i {
+      color: var(--accent-yellow);
+    }
+
+    /* T&C LIST */
     .tc-list {
-      padding-left: 20px;
-      font-size: 0.9rem;
+      padding-left: 18px;
+      font-size: 0.82rem;
       color: var(--text-dim);
+      line-height: 1.6;
     }
 
     .tc-list li {
       margin-bottom: 8px;
     }
 
-    footer {
+    /* FOOTER BANNER */
+    .footer-banner {
+      background: linear-gradient(180deg, var(--bg-teal) 0%, rgba(0,0,0,0.5) 100%);
       text-align: center;
-      margin-top: 40px;
+      padding: 30px 20px;
+      margin-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .footer-banner h2 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--accent-yellow);
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+    }
+
+    .footer-banner p {
+      font-size: 0.85rem;
       color: var(--text-dim);
-      font-size: 0.9rem;
+    }
+
+    .footer-tag {
+      font-size: 0.75rem;
+      color: #6c5ce7;
+      margin-top: 15px;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h2>Synergy</h2>
-    <h1>LEVELING UP!</h1>
-    <p style="color: var(--text-dim);">SCM Gathering 2026</p>
-    
-    <div class="event-meta">
-      <div class="badge"><i class="fa-regular fa-calendar"></i> 7–8 November 2026</div>
-      <div class="badge"><i class="fa-solid fa-location-dot"></i> De Gemelos Villa, Sentul</div>
-    </div>
-  </header>
+  <div class="pdf-container">
 
-  <div class="container">
-
-    <!-- Special Contribution / Payment -->
-    <div class="card">
-      <h3><i class="fa-solid fa-ticket"></i> Kontribusi Peserta</h3>
-      <div class="price-box">
-        <div class="old-price">Rp 230.000</div>
-        <div class="new-price">Rp 130.000 <span style="font-size:1rem; font-weight:normal;">/ orang</span></div>
-        <div class="subsidy-badge">Hemat Rp 100.000 (Subsidi Uang Kas)</div>
-      </div>
-
-      <div class="bank-card">
+    <!-- PAGE 1 / HEADER -->
+    <div class="page-hero">
+      <div class="hero-header">
         <div>
-          <p style="font-size:0.8rem; color:#9CA3AF;">Transfer Ke:</p>
-          <strong style="font-size:1.1rem; color:#FFF;">MANDIRI - 60010963076</strong>
-          <p style="font-size:0.85rem; color:var(--text-dim);">a.n Milla Mariska</p>
+          <div class="hero-title-sub">SYNERGY:</div>
+          <div class="hero-title-main">LEVELING UP!</div>
+          <div class="hero-title-yellow">SCM Gathering 2026</div>
         </div>
-        <button class="copy-btn" onclick="copyRekening('60010963076')"><i class="fa-regular fa-copy"></i> Salin</button>
+        <div class="hatch-pattern"></div>
       </div>
-      <p style="font-size:0.8rem; color:#9CA3AF; margin-top:10px; text-align:center;">
-        *Pembayaran paling lambat <strong>22 Oktober 2026</strong>
+
+      <!-- Polaroid Trekking Image -->
+      <div class="polaroid-frame">
+        <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=600&q=80" alt="Trekking SCM">
+      </div>
+
+      <div class="event-info-box">
+        <h3>READY TO LEVEL UP?</h3>
+        <p style="font-size:0.85rem; color:var(--text-dim);">Step out of the routine. Step up the synergy.</p>
+        <p style="font-size:0.95rem; font-weight:bold; margin-top:8px; color:#fff;">
+          <i class="fa-regular fa-calendar"></i> 7-8 November 2026<br>
+          <i class="fa-solid fa-location-dot"></i> De Gemelos Villa, Sentul
+        </p>
+      </div>
+
+      <!-- Highlights Grid -->
+      <div class="highlight-grid">
+        <div class="highlight-card">
+          <h4>TREK & EXPLORE</h4>
+          <p>Start the adventure. Explore the trail.</p>
+        </div>
+        <div class="highlight-card">
+          <h4>CHASE THE WATERFALL</h4>
+          <p>Reach the waterfall. Enjoy the moment.</p>
+        </div>
+        <div class="highlight-card">
+          <h4>TEAM UP!</h4>
+          <p>Fun games, teamwork & friendly competition.</p>
+        </div>
+        <div class="highlight-card">
+          <h4>STAY & CONNECT</h4>
+          <p>Chill, laugh & create memories together.</p>
+        </div>
+      </div>
+
+      <!-- Special Contribution Box -->
+      <div class="contribution-box">
+        <h3>SPECIAL CONTRIBUTION</h3>
+        <div class="old-price">Rp230.000</div>
+        <div class="main-price">Rp130.000 / PERSON</div>
+        <div class="subsidy-tag">SAVE Rp100.000! Subsidi Uang Kas</div>
+
+        <div class="bank-info">
+          <div style="text-align:left;">
+            <p style="font-size:0.75rem; color:var(--text-dim);">Transfer to:</p>
+            <p style="font-weight:bold; font-size:0.9rem;">MANDIRI - 60010963076</p>
+            <p style="font-size:0.75rem; color:var(--text-dim);">a.n Milla Mariska</p>
+          </div>
+          <button class="copy-btn" onclick="copyRekening('60010963076')">Copy</button>
+        </div>
+        <p style="font-size:0.75rem; color:var(--text-dim); margin-top:8px;">
+          *Pembayaran paling lambat 22 Oct 2026
+        </p>
+      </div>
+
+      <!-- Polaroid Villa Image -->
+      <div class="polaroid-frame" style="transform: rotate(2deg);">
+        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=600&q=80" alt="Villa Sentul">
+      </div>
+    </div>
+
+    <!-- RUNDOWN SECTION -->
+    <div style="padding: 0 20px;">
+      <div class="section-header">RUNDOWN</div>
+
+      <div class="rundown-day-title">Day 1</div>
+      <div class="rundown-list">
+        <div class="rundown-row"><div class="rundown-time">05.15 - 05.30</div><div>Kumpul & briefing di MBS Ged A</div></div>
+        <div class="rundown-row"><div class="rundown-time">05.30 - 07.00</div><div>Berangkat dari MBS menuju parkiran Sentul</div></div>
+        <div class="rundown-row"><div class="rundown-time">07.00 - 08.00</div><div>Start menuju curug hordeng (via mobil pickup) + Stretching</div></div>
+        <div class="rundown-row"><div class="rundown-time">08.00 - 10.30</div><div>Start trekking curug hordeng, main air + prepare turun</div></div>
+        <div class="rundown-row"><div class="rundown-time">10.30 - 11.30</div><div>Trekking turun ke pintu masuk curug hordeng</div></div>
+        <div class="rundown-row"><div class="rundown-time">11.30 - 12.00</div><div>Otw menuju parkiran (via mobil pickup)</div></div>
+        <div class="rundown-row"><div class="rundown-time">12.00 - 12.30</div><div>Goes to Warung Sambal Dower for lunch</div></div>
+        <div class="rundown-row"><div class="rundown-time">12.30 - 13.30</div><div>ISOMA (Lunch)</div></div>
+        <div class="rundown-row"><div class="rundown-time">13.30 - 14.00</div><div>Goes to Villa</div></div>
+        <div class="rundown-row"><div class="rundown-time">14.00 - 15.30</div><div>Check in & istirahat (free time)</div></div>
+        <div class="rundown-row"><div class="rundown-time">15.30 - 17.30</div><div>Fun Game</div></div>
+        <div class="rundown-row"><div class="rundown-time">17.30 - 19.00</div><div>ISOMA (sholat magrib s/d Isya)</div></div>
+        <div class="rundown-row"><div class="rundown-time">19.00 - 20.00</div><div>Dinner</div></div>
+        <div class="rundown-row"><div class="rundown-time">20.00 - 00.00</div><div>Chill & Connect</div></div>
+      </div>
+
+      <div class="rundown-day-title" style="text-align: right;">Day 2</div>
+      <table class="rundown-table">
+        <tr>
+          <td>Sarapan / Free time</td>
+          <td class="time-col">06.30 - 09.00</td>
+        </tr>
+        <tr>
+          <td>Pembagian hadiah / Doorprize</td>
+          <td class="time-col">09.00 - 10.00</td>
+        </tr>
+        <tr>
+          <td>Prepare pulang</td>
+          <td class="time-col">10.00 - 11.00</td>
+        </tr>
+        <tr>
+          <td>Maksi duyuuu ~ ~</td>
+          <td class="time-col">11.00 - 12.00</td>
+        </tr>
+        <tr>
+          <td>OTW MBS Ged A</td>
+          <td class="time-col">12.00 - 13.30</td>
+        </tr>
+        <tr>
+          <td>Selesaaaii..bye..bye..</td>
+          <td class="time-col">13.30</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- GEAR LIST SECTION -->
+    <div style="padding: 0 20px;">
+      <div class="section-header" style="margin-top: 40px;">MANDATORY GEAR</div>
+      <p style="text-align: center; font-size: 0.8rem; color: var(--text-dim); margin-bottom: 15px;">
+        Perlengkapan yang WAJIB kamu bawa !
       </p>
-    </div>
 
-    <!-- Rundown -->
-    <div class="card">
-      <h3><i class="fa-solid fa-clock"></i> Rundown Acara</h3>
-      <div class="tab-buttons">
-        <button class="tab-btn active" onclick="switchDay(1)">Day 1 (7 Nov)</button>
-        <button class="tab-btn" onclick="switchDay(2)">Day 2 (8 Nov)</button>
-      </div>
-
-      <!-- Day 1 -->
-      <div id="day1" class="timeline">
-        <div class="timeline-item"><div class="time">05.15 - 05.30</div><div>Kumpul & briefing di MBS Ged A</div></div>
-        <div class="timeline-item"><div class="time">05.30 - 07.00</div><div>Berangkat menuju lokasi</div></div>
-        <div class="timeline-item"><div class="time">07.00 - 08.00</div><div>Start menuju Curug Hordeng + Stretching</div></div>
-        <div class="timeline-item"><div class="time">08.00 - 11.00</div><div>Start trekking Curug Hordeng & bersih-bersih</div></div>
-        <div class="timeline-item"><div class="time">11.00 - 11.30</div><div>Trekking balik ke parkiran</div></div>
-        <div class="timeline-item"><div class="time">11.30 - 12.30</div><div>Goes to Warung Sambal Dower for lunch</div></div>
-        <div class="timeline-item"><div class="time">12.30 - 13.30</div><div>ISOMA (Lunch)</div></div>
-        <div class="timeline-item"><div class="time">13.30 - 14.00</div><div>Goes to Villa</div></div>
-        <div class="timeline-item"><div class="time">14.00 - 15.30</div><div>Check in & Istirahat (Free time)</div></div>
-        <div class="timeline-item"><div class="time">15.30 - 17.30</div><div>Fun Game</div></div>
-        <div class="timeline-item"><div class="time">17.30 - 19.00</div><div>ISOMA (Sholat Maghrib s/d Isya)</div></div>
-        <div class="timeline-item"><div class="time">19.00 - 20.00</div><div>Dinner</div></div>
-        <div class="timeline-item"><div class="time">20.00 - 00.00</div><div>Chill & Connect</div></div>
-      </div>
-
-      <!-- Day 2 -->
-      <div id="day2" class="timeline" style="display:none;">
-        <div class="timeline-item"><div class="time">06.30 - 09.00</div><div>Sarapan / Free time</div></div>
-        <div class="timeline-item"><div class="time">09.00 - 10.00</div><div>Pembagian hadiah / Doorprize</div></div>
-        <div class="timeline-item"><div class="time">10.00 - 11.00</div><div>Prepare pulang</div></div>
-        <div class="timeline-item"><div class="time">11.00 - 12.00</div><div>Maksi duyuuu ~ ~</div></div>
-        <div class="timeline-item"><div class="time">12.00 - 13.30</div><div>OTW MBS Ged A</div></div>
-        <div class="timeline-item"><div class="time">13.30</div><div>Selesaaaii.. bye.. bye..</div></div>
-      </div>
-    </div>
-
-    <!-- Mandatory & Optional Gear -->
-    <div class="card">
-      <h3><i class="fa-solid fa-suitcase"></i> Perlengkapan (Gear List)</h3>
-      <h4 style="color:var(--accent-yellow); margin-top:10px; font-size:0.95rem;">Mandatory Gear (WAJIB):</h4>
       <div class="gear-grid">
-        <div class="gear-item"><i class="fa-solid fa-shirt"></i> Baju Ganti</div>
-        <div class="gear-item"><i class="fa-solid fa-shoe-prints"></i> Sepatu Trekking / Sandal Gunung</div>
-        <div class="gear-item"><i class="fa-solid fa-vest"></i> Jaket / Outer</div>
-        <div class="gear-item"><i class="fa-solid fa-pills"></i> Obat Pribadi</div>
-        <div class="gear-item"><i class="fa-solid fa-bottle-water"></i> Botol Minum</div>
-        <div class="gear-item"><i class="fa-solid fa-soap"></i> Perlengkapan Mandi</div>
-        <div class="gear-item"><i class="fa-solid fa-socks"></i> Kaos Kaki Cadangan</div>
-        <div class="gear-item"><i class="fa-solid fa-mobile-screen"></i> HP & Charger</div>
-        <div class="gear-item"><i class="fa-solid fa-socks"></i> Sandal</div>
-        <div class="gear-item"><i class="fa-solid fa-money-bill-wave"></i> Duit Cash</div>
-        <div class="gear-item"><i class="fa-solid fa-bag-shopping"></i> Kantong Plastik (baju basah)</div>
+        <div class="gear-item"><i class="fa-solid fa-check"></i> BAJU GANTI</div>
+        <div class="gear-item"><i class="fa-solid fa-check"></i> SEPATU / SANDAL GUNUNG</div>
+        <div class="gear-item"><i class="fa-solid fa-check"></i> JAKET / OUTER</div>
+        <div class="gear-item"><i class="fa-solid fa-check"></i> OBAT PRIBADI</div>
+        <div class="gear-item"><i class="fa-solid fa-check"></i> BOTOL MINUM</div>
+        <div class="gear-item"><i class="fa-solid fa-check"></i> PERLENGKAPAN MANDI</div>
+        <div class="gear-item"><i class="fa-solid fa-check"></i> KAOS KAKI CADANGAN</div>
+        <div class="gear-item"><i class="fa-solid fa-check"></i> HP & CHARGER</div>
+        <div class="gear-item"><i class="fa-solid fa-check"></i> SENDAL</div>
+        <div class="gear-item"><i class="fa-solid fa-check"></i> DUIT CASH</div>
+        <div class="gear-item" style="grid-column: span 2;"><i class="fa-solid fa-check"></i> KANTONG PLASTIK (baju/barang basah)</div>
       </div>
 
-      <h4 style="color:var(--text-dim); margin-top:20px; font-size:0.95rem;">Optional Gear:</h4>
+      <div class="gear-section-title" style="margin-top: 25px;">OPTIONAL GEAR</div>
+      <p style="font-size: 0.75rem; color: var(--text-dim); margin-bottom: 10px;">Gak wajib, tp klo ada bikin kamu nyaman</p>
+      
       <div class="gear-grid">
-        <div class="gear-item"><i class="fa-solid fa-umbrella"></i> Jas Hujan</div>
-        <div class="gear-item"><i class="fa-solid fa-battery-full"></i> Power Bank</div>
-        <div class="gear-item"><i class="fa-solid fa-spray-can"></i> Lotion Nyamuk</div>
-        <div class="gear-item"><i class="fa-solid fa-sun"></i> Sunscreen</div>
-        <div class="gear-item"><i class="fa-solid fa-hat-cowboy"></i> Topi</div>
-        <div class="gear-item"><i class="fa-solid fa-band-aid"></i> Plester / Obat Luka</div>
-        <div class="gear-item"><i class="fa-solid fa-mattress-pillow"></i> Handuk Kecil</div>
+        <div class="gear-item"><i class="fa-regular fa-circle"></i> JAS HUJAN</div>
+        <div class="gear-item"><i class="fa-regular fa-circle"></i> POWER BANK</div>
+        <div class="gear-item"><i class="fa-regular fa-circle"></i> LOTION ANTI NYAMUK</div>
+        <div class="gear-item"><i class="fa-regular fa-circle"></i> SUNSCREEN</div>
+        <div class="gear-item"><i class="fa-regular fa-circle"></i> TOPI</div>
+        <div class="gear-item"><i class="fa-regular fa-circle"></i> PLESTER / OBAT LUKA</div>
+        <div class="gear-item" style="grid-column: span 2;"><i class="fa-regular fa-circle"></i> HANDUK KECIL</div>
       </div>
     </div>
 
-    <!-- Syarat & Ketentuan (T&C) -->
-    <div class="card">
-      <h3><i class="fa-solid fa-clipboard-check"></i> Syarat & Ketentuan (T&C)</h3>
+    <!-- T&C SECTION -->
+    <div style="padding: 0 20px;">
+      <div class="section-header" style="margin-top: 40px;">T&C</div>
       <ul class="tc-list">
-        <li>Peserta wajib mengikuti seluruh rangkaian kegiatan sesuai jadwal dan arahan panitia[cite: 3].</li>
-        <li>Peserta wajib membawa seluruh <strong>Mandatory Gear</strong>[cite: 3, 4].</li>
-        <li>Untuk kegiatan outdoor, gunakan pakaian dan alas kaki yang sesuai[cite: 3].</li>
-        <li>Jaga keamanan, kebersihan, kenyamanan, dan kerja sama selama acara[cite: 3].</li>
-        <li>Peserta bertanggung jawab penuh atas barang pribadi[cite: 3].</li>
-        <li>Peserta yang membawa anak wajib konfirmasi ke panitia terlebih dahulu (biaya tambahan anak menjadi tanggung jawab peserta & anak wajib dalam pengawasan orang tua)[cite: 3].</li>
-        <li>Pembayaran yang telah dilakukan tidak dapat dikembalikan[cite: 3].</li>
-        <li>Bukti pembayaran wajib dikirimkan kepada PIC/panitia sebagai konfirmasi keikutsertaan[cite: 3].</li>
+        <li>Peserta wajib mengikuti seluruh rangkaian kegiatan sesuai jadwal dan arahan panitia[cite: 14].</li>
+        <li>Peserta wajib membawa seluruh Mandatory Gear yang telah diinformasikan[cite: 14].</li>
+        <li>Untuk kegiatan outdoor, peserta wajib menggunakan pakaian dan alas kaki yang sesuai[cite: 14].</li>
+        <li>Peserta wajib menjaga keamanan, kebersihan, kenyamanan, dan kerja sama selama kegiatan berlangsung[cite: 14].</li>
+        <li>Peserta bertanggung jawab atas barang pribadi masing-masing[cite: 14].</li>
+        <li>Kontribusi peserta sebesar Rp130.000/orang[cite: 13, 14].</li>
+        <li>Pembayaran dilakukan paling lambat 22 Oct 2026[cite: 14].</li>
+        <li>Peserta yang membawa anak wajib melakukan konfirmasi kepada panitia terlebih dahulu. Biaya tambahan anak, apabila ada, menjadi tanggung jawab peserta[cite: 14].</li>
+        <li>Pembayaran yang telah dilakukan tidak dapat dikembalikan, kecuali terdapat ketentuan khusus yang ditetapkan oleh panitia[cite: 14].</li>
+        <li>Bukti pembayaran wajib dikirimkan kepada PIC/panitia sebagai konfirmasi keikutsertaan[cite: 14].</li>
+        <li>Anak yang ikut wajib berada dalam pengawasan orang tua/wali selama kegiatan[cite: 14].</li>
+        <li>Keikutsertaan anak dalam aktivitas outdoor/trekking menyesuaikan kondisi, usia, dan arahan panitia[cite: 14].</li>
+        <li>Segala perubahan terkait jadwal atau teknis kegiatan akan diinformasikan oleh panitia[cite: 14].</li>
       </ul>
     </div>
 
-  </div>
+    <!-- FOOTER -->
+    <div class="footer-banner">
+      <h2>LET'S LEVEL UP TOGETHER!</h2>
+      <p>One team. One adventure. More memories.</p>
+      <div class="footer-tag">SCM Gathering 2026</div>
+    </div>
 
-  <footer>
-    <p>LET'S LEVEL UP TOGETHER![cite: 2]</p>
-    <p style="font-size:0.8rem; margin-top:5px; color:#6B7280;">SCM Gathering 2026 • One team. One adventure. More memories.[cite: 2, 3]</p>
-  </footer>
+  </div>
 
   <script>
     function copyRekening(norek) {
       navigator.clipboard.writeText(norek);
       alert("Nomor rekening berhasil disalin: " + norek);
-    }
-
-    function switchDay(day) {
-      const day1 = document.getElementById('day1');
-      const day2 = document.getElementById('day2');
-      const btns = document.querySelectorAll('.tab-btn');
-
-      if (day === 1) {
-        day1.style.display = 'flex';
-        day2.style.display = 'none';
-        btns[0].classList.add('active');
-        btns[1].classList.remove('active');
-      } else {
-        day1.style.display = 'none';
-        day2.style.display = 'flex';
-        btns[1].classList.add('active');
-        btns[0].classList.remove('active');
-      }
     }
   </script>
 </body>
